@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %} 
+<h1>Download  Page</h1>
+<h2><B>Title : </B> {{url.title}}</h2>
+<!-- <h2>{{vd.thumbnail}}</h2> -->
+<!-- <p>{{url.streams}}</p> -->
+<style>
+    body{
+    background: radial-gradient(circle, rgb(185, 195, 197), rgb(12, 175, 140));
+    }
+</style>
+<body>
+<form action="{{ url_for('download') }}" method="post">
+   <select name="itag">
+        {% for i in url.streams.filter(progressive=True)%}
+            <option value="{{i.itag}}">{{i.resolution}}</option>
+        {%endfor%}
+   </select>
+   <button type="submit"> Download</button>
+<div>
+    <img style="width: 300px; height: 100px;text-align: center;border-radius: 20%;" src="{{vd.thumbnail}}" alt="Thumbnail"class= "thumbnail">
+</div>
+</from>
+</body>
+{% endblock content %}

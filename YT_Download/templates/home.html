@@ -1,0 +1,178 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!Doctype Html>
+<Html>
+
+<Head>
+    <Title>
+        Make a Navigation Bar
+    </Title>
+
+</Head>
+<style>
+    body {
+        /*background-image: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif); */
+        /* background: linear-gradient(black, white); */
+        background: radial-gradient(circle, black, white);
+        height: 125vh;
+        margin-top: 80px;
+        padding: 30px;
+        /* background-size: cover;   */
+        font-family: sans-serif;
+    }
+
+    header {
+        background-color: rgb(1, 36, 37);
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 25px 0 black;
+    }
+
+    header * {
+        display: inline;
+    }
+
+    header li {
+        margin: 20px;
+    }
+
+    header li a {
+        color: rgb(237, 244, 245);
+        text-decoration: none;
+    }
+
+
+
+    .blue-btn a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        /* important */
+
+    }
+
+    .blue-btn {
+        height: 65px;
+        font: normal normal 700 1em/4em Arial, sans-serif;
+        width: 250px;
+        background-color: #d6f4f5;
+        border-radius: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -60px 0 0 -150px;
+
+    }
+
+    .blue-btn:hover {
+        background-color: #003D60;
+
+    }
+
+    .blue-btn a:hover {
+        text-decoration: none;
+    }
+
+    /* stroke */
+    nav.hov ul li a,
+    nav.fill ul li a {
+        position: relative;
+    }
+
+    nav.hov ul li a:after,
+    nav.fill ul li a:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: '.';
+        color: transparent;
+        background: #dde2e4;
+        height: 1px;
+    }
+
+    nav.hov ul li a:hover:after {
+        width: 100%;
+    }
+
+    .first_sign_up {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        /* important */
+        margin: -15px auto;
+        padding: -3px;
+        position: relative;
+    }
+
+    .sign_up {
+        height: 38px;
+        font: normal normal 700 1em/4em Arial, sans-serif;
+        width: 160px;
+        background-color: #b0def0;
+        border-radius: 10px;
+        position: absolute;
+        top: 0%;
+        right: 0%;
+    }
+
+    .sign_up:hover {
+        background-color: #003D60;
+
+    }
+
+    .sign_up a:hover {
+        text-decoration: none;
+    }
+</style>
+
+<Body>
+    <h1>Home Page</h1>
+    <h1 style="width: auto;margin: auto;color: white;padding: 11px;font-size: 46px;">YouTube Video Download</h1>
+    <form method="POST">
+        <input type="text" placeholder="Enter the URL YouTube" name="url">
+        <button type="submit">
+            <strog>Start </strog>
+        </button>
+        <header>
+            <nav class="hov">
+                <ul>
+                    <li>
+                        <a href="#"> <strong>Home</strong> </a>
+                    </li>
+                    <li>
+                        <a href="#"><strong> About</strong> </a>
+                    </li>
+                    <li>
+                        <a href="#"><strong> Contact</strong> </a>
+                    </li>
+                    <li> <a href="#"> <strong>Terms of use </strong></a>
+                    </li>
+                    <li>
+                        <a href="#"> <strong>Join Us </strong></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sign_up">
+                <a class="first_sign_up" href="login.html">
+                    <strong> Sign up</strong>
+                </a>
+            </div>
+        </header>
+        <div class="blue-btn">
+            <a class="first-link" href="home.html">
+                Get Started
+            </a>
+        </div>
+    </form>
+    {% endblock content %}
